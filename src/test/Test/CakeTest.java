@@ -8,6 +8,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class CakeTest {
 
+    BakingItem whisk;
     Cupcake chocolateCupcake;
     TieredCake strawberryCake;
     TraybakeCake coffeeTraybake;
@@ -17,7 +18,7 @@ public class CakeTest {
         chocolateCupcake = new Cupcake("chocolate cupcake", "chocolate", "cream cheese");
         strawberryCake = new TieredCake("strawberry cake", "strawberry", 3, 5 );
         coffeeTraybake = new TraybakeCake("coffee Traybake", "coffee", 4);
-
+        whisk = new BakingItem();
     }
 
     @Test
@@ -37,4 +38,9 @@ public class CakeTest {
         assertThat(coffeeTraybake.getBaseFlavour()).isEqualTo("red velvet");
     }
 
+    @Test
+    public void canSell(){
+        assertThat(whisk.sell()).isEqualTo("Sold a baking item");
+
+    }
 }
